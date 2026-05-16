@@ -1,7 +1,7 @@
 # Site settings
 
-title: Juan Ceron Portfolio
-description: Backend & Distributed Systems Engineer
+title: "Juan Ceron Portfolio"
+description: "Backend & Distributed Systems Engineer"
 
 # baseurl: "/particle"
 
@@ -9,15 +9,22 @@ description: Backend & Distributed Systems Engineer
 
 # User settings
 
-username: Juan Ceron
-user_title: Senior Software Engineer
-user_description: Senior Software Engineer specialized in distributed systems, cloud-native architectures, and high-scale backend platforms. Experienced building resilient Go microservices, AWS event-driven systems, and observability solutions for global platforms such as Disney and Mercado Libre. Passionate about technical excellence, scalable system design, and high-performance engineering cultures.
-email: [juanceron256@gmail.com](mailto:juanceron256@gmail.com)
-github_username: JuanCeron023
+username: "Juan Ceron"
+
+user_description: "Senior Software Engineer specialized in distributed systems, cloud-native architectures, and high-scale backend platforms. Experienced building resilient Go microservices, AWS event-driven systems, and observability solutions for global platforms such as Disney and Mercado Libre. Passionate about technical excellence, scalable system design, and high-performance engineering cultures."
+
+user_title: "Senior Software Engineer"
+
+email: "[juanceron256@gmail.com](mailto:juanceron256@gmail.com)"
+github_username: "JuanCeron023"
 
 # Google Analytics
 
 google-analytics:
 id: ""
 
-exclude: ['package.json', 'src', 'node_modules']
+exclude:
+
+* "package.json"
+* "src"
+* "node_modules"
