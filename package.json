@@ -17,5 +17,13 @@
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.1"
+  },
+  "resolutions": {
+    "minimist": "^1.2.8",
+    "braces": "^3.0.3",
+    "micromatch": "^4.0.8",
+    "fstream": "^1.0.12",
+    "tar": "^6.2.1",
+    "lodash": "^4.17.21"
   }
 }
