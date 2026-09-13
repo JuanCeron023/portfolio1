@@ -1,4 +1,4 @@
-const e=`struct Scene {
+var e=`struct Scene {
     resolution: vec2f,
     pointer: vec2f,
     time: f32,
