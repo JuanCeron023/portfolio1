@@ -1,0 +1,22 @@
+{
+	"name": "Juan Manuel Cerón",
+	"short_name": "Juan Cerón",
+	"description": "Senior Software Engineer specialized in distributed systems, cloud-native architectures, and high-scale backend platforms.",
+	"icons": [
+		{
+			"src": "/favicon/favicon-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/favicon/favicon-310x310.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"theme_color": "#000000",
+	"background_color": "#000000",
+	"display": "standalone",
+	"start_url": "/",
+	"scope": "/"
+}
