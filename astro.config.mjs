@@ -5,8 +5,6 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
-import rehypeKatex from "rehype-katex";
-import remarkMath from "remark-math";
 import vesperDark from "./public/themes/vesper-dark.json";
 import vesperLight from "./public/themes/vesper-light.json";
 
@@ -21,10 +19,7 @@ export default defineConfig({
 
 	integrations: [
 		sitemap(),
-		mdx({
-			remarkPlugins: [remarkMath],
-			rehypePlugins: [rehypeKatex],
-		}),
+		mdx(),
 		react(),
 	],
 
