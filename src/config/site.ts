@@ -8,41 +8,36 @@ interface OgUrlOptions {
 }
 
 export const siteConfig: SiteConfig = {
-	name: "Railly Hugo",
+	name: "Juan Manuel Cerón",
 	description:
-		"Peruvian Software Engineer at Vercel Labs and Founder of Crafter Station, building AI developer tools, open source software, and LATAM's tech ecosystem from Buenos Aires.",
-	url: "https://www.railly.dev",
-	ogImage: "https://www.railly.dev/images/og.webp",
+		"Senior Software Engineer specialized in distributed systems, cloud-native architectures, and high-scale backend platforms. Building resilient Go microservices and event-driven systems for global platforms.",
+	url: "https://juanceron023.github.io/portfolio1",
+	ogImage: "/images/avatar.png",
 	hero: {
-		title: "Hunter",
-		role: "Software Engineer",
-		location: "Buenos Aires, Argentina",
+		title: "Juan Cerón",
+		role: "Senior Software Engineer",
+		location: "Pasto, Colombia",
 	},
-	author: "Railly Hugo",
-	email: "hi@railly.dev",
+	author: "Juan Manuel Cerón",
+	email: "juanceron256@gmail.com",
 	links: {
-		twitter: "https://twitter.com/raillyhugo",
-		github: "https://github.com/Railly",
-		linkedin: "https://linkedin.com/in/railly-hugo",
+		twitter: "",
+		github: "https://github.com/JuanCeron023",
+		linkedin: "https://linkedin.com/in/juanmanuelceronaraujo",
 	},
 	keywords: [
-		"Railly Hugo",
-		"Software Engineer",
-		"Vercel",
-		"Vercel Labs",
-		"Crafter Station",
-		"AI research",
-		"civic tech",
-		"open source",
-		"developer tools",
-		"TypeScript",
-		"Next.js",
-		"React",
-		"Lima",
-		"Peru",
-		"Buenos Aires",
-		"Argentina",
-		"LATAM tech",
+		"Juan Manuel Ceron Araujo",
+		"Senior Software Engineer",
+		"Go",
+		"Golang",
+		"AWS",
+		"Event-Driven",
+		"Microservices",
+		"Disney",
+		"Globant",
+		"Mercado Libre",
+		"Pasto",
+		"Colombia"
 	],
 	locale: "en_US",
 	themeColor: {
@@ -50,23 +45,13 @@ export const siteConfig: SiteConfig = {
 		dark: "#111111",
 	},
 	icons: {
-		icon: "/favicon/favicon.ico",
-		shortcut: "/favicon/favicon-16x16.png",
-		apple: "/favicon/apple-touch-icon.png",
+		icon: "/images/avatar.png",
+		shortcut: "/images/avatar.png",
+		apple: "/images/avatar.png",
 	},
-	manifest: "/favicon/site.webmanifest",
+	manifest: "/images/avatar.png",
 };
 
-export function ogUrl({ title, description, tag, date }: OgUrlOptions) {
-	const searchParams = new URLSearchParams({ title, description });
-
-	if (tag) {
-		searchParams.set("tag", tag);
-	}
-
-	if (date) {
-		searchParams.set("date", date);
-	}
-
-	return `/api/og?${searchParams.toString()}`;
+export function ogUrl(_options?: OgUrlOptions) {
+	return "/images/avatar.png";
 }

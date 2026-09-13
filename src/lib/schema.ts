@@ -25,8 +25,8 @@ export function buildSchemaGraph(props: SchemaProps): object {
 		{
 			"@type": "Organization",
 			"@id": `${siteConfig.url}/#organization`,
-			name: "Crafter Station",
-			url: "https://crafterstation.com",
+			name: "Optima",
+			url: "https://contratosoptima.com",
 			founder: { "@id": `${siteConfig.url}/#person` },
 			contactPoint: {
 				"@type": "ContactPoint",
@@ -36,34 +36,33 @@ export function buildSchemaGraph(props: SchemaProps): object {
 			},
 			address: {
 				"@type": "PostalAddress",
-				addressLocality: "Buenos Aires",
-				addressCountry: "AR",
+				addressLocality: "Pasto",
+				addressCountry: "CO",
 			},
-			sameAs: ["https://github.com/crafter-station"],
+			sameAs: ["https://contratosoptima.com"],
 		},
 		{
 			"@type": "Person",
 			"@id": `${siteConfig.url}/#person`,
 			name: siteConfig.author,
 			url: siteConfig.url,
-			image: `${siteConfig.url}/images/profile.webp`,
+			image: `${siteConfig.url}/images/b.png`,
 			sameAs: [
-				siteConfig.links.twitter,
 				siteConfig.links.github,
 				siteConfig.links.linkedin,
-			],
-			jobTitle: "Software Engineer",
+			].filter(Boolean),
+			jobTitle: "Senior Software Engineer",
 			description: siteConfig.description,
 			worksFor: {
 				"@type": "Organization",
-				name: "Vercel",
-				url: "https://vercel.com",
+				name: "Globant",
+				url: "https://www.globant.com",
 			},
 			founder: { "@id": `${siteConfig.url}/#organization` },
 			alumniOf: {
 				"@type": "CollegeOrUniversity",
-				name: "Universidad Nacional Mayor de San Marcos",
-				url: "https://unmsm.edu.pe",
+				name: "Universidad Mariana",
+				url: "https://www.umariana.edu.co",
 			},
 		},
 	];
@@ -90,23 +89,7 @@ export function buildSchemaGraph(props: SchemaProps): object {
 	const breadcrumbItems: Record<string, unknown>[] = [
 		{ "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
 	];
-	if (props.article) {
-		breadcrumbItems.push({
-			"@type": "ListItem",
-			position: 2,
-			name: "Writing",
-			item: `${siteConfig.url}/writing`,
-		});
-		breadcrumbItems.push({
-			"@type": "ListItem",
-			position: 3,
-			name: props.title,
-		});
-	} else if (
-		props.title !== siteConfig.name &&
-		props.title !==
-			"Railly Hugo - Software Engineer at Vercel Labs | Crafter Station Founder"
-	) {
+	if (props.title !== siteConfig.name) {
 		breadcrumbItems.push({
 			"@type": "ListItem",
 			position: 2,

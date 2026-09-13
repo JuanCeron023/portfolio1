@@ -1,106 +1,102 @@
 export type Scope = "global" | "pe" | "cl" | "co" | "br";
 
 export interface Achievement {
+	id: string;
 	year: string;
 	achievement: string;
-	event: string;
+	event: string; // Issuer
 	eventUrl?: string;
 	project?: string;
 	projectUrl?: string;
 	scope: Scope;
+	description?: string;
+	credentialUrl?: string;
+	skills?: string[];
 }
+
+export const credlyProfileUrl = "https://www.credly.com/users/juan-manuel-ceron-araujo.4f4e3e87";
 
 export const achievements: Achievement[] = [
 	{
+		id: "aws-solutions-architect",
 		year: "2026",
-		achievement: "ElevenLabs Prize",
-		event: "Agents Hackathon Brazil",
-		eventUrl:
-			"https://www.linkedin.com/posts/railly-hugo_aiagents-hackathon-buildinginpublic-activity-7423521448687919104-ybiq",
-		project: "i18n",
-		projectUrl: "https://i18n.crafter.run",
-		scope: "br",
+		achievement: "AWS Certified Solutions Architect – Associate",
+		event: "Amazon Web Services (AWS)",
+		eventUrl: credlyProfileUrl,
+		scope: "global",
+		credentialUrl: credlyProfileUrl,
+		description:
+			"Designing resilient, secure, and cost-effective cloud architectures. Covers decoupled messaging (SQS, SNS, EventBridge), high availability, multi-tier backends, and storage on AWS.",
+		skills: ["AWS", "Distributed Systems", "Cloud Architecture", "High Availability", "Security", "Cost Optimization"],
 	},
 	{
+		id: "google-ai-professional",
 		year: "2026",
-		achievement: "2nd Place",
-		event: "v0 × Sanity Builder Challenge",
-		eventUrl:
-			"https://www.sanity.io/blog/v0-sanity-builder-challenge-the-winners",
-		project: "Annual Calendar 2026",
-		projectUrl: "https://v0-annual-calendar.vercel.app",
+		achievement: "Google AI Professional Certificate",
+		event: "Google",
+		eventUrl: credlyProfileUrl,
 		scope: "global",
+		credentialUrl: credlyProfileUrl,
+		description:
+			"Practical workflows with large language models (LLMs), prompt engineering, and integrating modern AI capabilities into production software.",
+		skills: ["Generative AI", "LLMs", "Prompt Engineering", "AI Integration", "Python"],
 	},
 	{
+		id: "claude-partner-badge",
 		year: "2026",
-		achievement: "Online Winner",
-		event: "Platanus Hack 25'| Voting",
-		eventUrl: "https://25.hack.platan.us/vote/scrapifast",
-		project: "Scrapi",
-		projectUrl: "https://scrapi.fast",
-		scope: "cl",
-	},
-	{
-		year: "2025",
-		achievement: "Overall Winner",
-		event: "Next.js Global Hackathon",
-		eventUrl: "https://www.youtube.com/watch?v=KDRwgbwq0_c&t=1142s",
-		project: "text0",
-		projectUrl: "https://text0.dev",
+		achievement: "Claude Partner Badge – Claude Code",
+		event: "Anthropic",
+		eventUrl: credlyProfileUrl,
 		scope: "global",
+		credentialUrl: credlyProfileUrl,
+		description:
+			"Practical experience with agentic coding workflows, context management, and using Claude Code to architect, navigate, and refactor complex codebases.",
+		skills: ["Agentic AI", "Claude Code", "AI Assisted Engineering", "Context Engineering"],
 	},
 	{
+		id: "mongodb-si-architect",
 		year: "2025",
-		achievement: "1st Place",
-		event: "Vercel AI Gateway Hackathon",
-		eventUrl: "https://www.youtube.com/watch?v=yKzXoJgPenw&t=28889s",
-		project: "Chess Battle",
-		projectUrl: "https://github.com/crafter-station/chess-battle",
+		achievement: "MongoDB SI Architect Certification",
+		event: "MongoDB",
+		eventUrl: credlyProfileUrl,
 		scope: "global",
+		credentialUrl: credlyProfileUrl,
+		description:
+			"Document schema design at scale, indexing strategies, replica sets, sharding topologies, and building high-volume transactional data pipelines.",
+		skills: ["MongoDB", "NoSQL", "Sharding & Replication", "Query Optimization", "Data Modeling"],
 	},
 	{
-		year: "2025",
-		achievement: "Judge & Mentor",
-		event: "IA Hackathon Colombia Tech Fest",
-		eventUrl:
-			"https://www.linkedin.com/posts/railly-hugo_de-vuelta-en-lima-despu%C3%A9s-de-una-experiencia-activity-7369217715481362432-XgLj",
+		id: "azure-fundamentals",
+		year: "2022",
+		achievement: "Microsoft Certified: Azure Fundamentals (AZ-900)",
+		event: "Microsoft",
+		eventUrl: credlyProfileUrl,
+		scope: "global",
+		credentialUrl: credlyProfileUrl,
+		description:
+			"Core cloud computing concepts, security, networking, pricing tiers, and governance across Microsoft Azure services.",
+		skills: ["Microsoft Azure", "Cloud Concepts", "Cloud Security", "SLA & Governance"],
+	},
+	{
+		id: "scrum-foundation",
+		year: "2021",
+		achievement: "Scrum Foundation Professional Certificate (SFPC)",
+		event: "CertiProf",
+		eventUrl: credlyProfileUrl,
+		scope: "global",
+		credentialUrl: credlyProfileUrl,
+		description:
+			"Agile product delivery, sprint planning, continuous delivery loops, and cross-functional team execution.",
+		skills: ["Scrum", "Agile Methodologies", "Sprint Planning", "Cross-Functional Collaboration"],
+	},
+	{
+		id: "mariana-scholarship",
+		year: "2017 – 2022",
+		achievement: "Full-Tuition Academic Scholarship (Highest GPA)",
+		event: "Mariana University",
 		scope: "co",
-	},
-	{
-		year: "2025",
-		achievement: "Outstanding Graduate",
-		event: "UNMSM Engineering",
-		eventUrl: "https://www.youtube.com/watch?v=swdmucdGGLA&t=10362s",
-		scope: "pe",
-	},
-	{
-		year: "2025",
-		achievement: "Finalist",
-		event: "Platanus Hack 25' | In-person",
-		eventUrl:
-			"https://www.linkedin.com/posts/railly-hugo_gran-experiencia-en-la-platanus-hack-25-activity-7400005671913684992-A1WW",
-		project: "Scrapi",
-		projectUrl: "https://scrapi.fast",
-		scope: "cl",
-	},
-	{
-		year: "2025",
-		achievement: "Finalist",
-		event: "IA Hackathon LATAM",
-		eventUrl:
-			"https://www.linkedin.com/feed/update/urn:li:ugcPost:7328521111485243393",
-		project: "GitHunter",
-		projectUrl: "https://github.com/crafter-station/githunter",
-		scope: "global",
-	},
-	{
-		year: "2024",
-		achievement: "3rd Place",
-		event: "Vercel × Midudev Hackathon",
-		eventUrl:
-			"https://www.linkedin.com/feed/update/urn:li:ugcPost:7232743944592240640",
-		project: "Tinte",
-		projectUrl: "https://tinte.dev",
-		scope: "global",
+		description:
+			"Awarded 100% full-tuition merit scholarship throughout the entire Systems Engineering program for holding the highest GPA in the cohort.",
+		skills: ["Software Engineering", "Algorithms", "Data Structures", "Academic Excellence"],
 	},
 ];

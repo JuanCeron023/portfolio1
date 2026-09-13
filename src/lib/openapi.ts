@@ -1,21 +1,21 @@
 export const openApiDocument = {
 	openapi: "3.1.0",
 	info: {
-		title: "railly.dev Public API",
+		title: "Juan Manuel Cerón Portfolio API",
 		version: "1.0.0",
 		description:
-			"Read-only public metadata for Railly Hugo's portfolio. No authentication is required.",
-		license: { name: "All rights reserved", url: "https://www.railly.dev" },
+			"Read-only public metadata for Juan Manuel Cerón's portfolio. No authentication is required.",
+		license: { name: "MIT", url: "https://github.com/JuanCeron023" },
 	},
 	security: [],
-	servers: [{ url: "https://www.railly.dev" }],
+	servers: [{ url: "https://juanceron023.github.io" }],
 	paths: {
 		"/api/projects.json": {
 			get: {
-				operationId: "listRaillyProjects",
-				summary: "List Railly Hugo's public projects",
+				operationId: "listProjects",
+				summary: "List public projects and backend platforms",
 				description:
-					"Returns the canonical public project catalog with repository links and GitHub star counts.",
+					"Returns the canonical public project catalog.",
 				responses: {
 					"200": {
 						description: "Public project catalog",

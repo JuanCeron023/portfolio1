@@ -1,9 +1,7 @@
 export function ogUrl(
-	title: string,
-	description: string,
-	tag?: string,
+	_title?: string,
+	_description?: string,
+	_tag?: string,
 ): string {
-	const params = new URLSearchParams({ title, description });
-	if (tag) params.set("tag", tag);
-	return `/api/og?${params.toString()}`;
+	return "/images/avatar.png";
 }

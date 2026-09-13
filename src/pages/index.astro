@@ -1,54 +1,21 @@
 ---
-import { getCollection } from "astro:content";
-import PremiereCountdown from "@/components/blog/PremiereCountdown";
-import ViewCounter from "@/components/blog/ViewCounter";
 import AchievementRow from "@/components/home/AchievementRow.astro";
 import FeaturedProjectRow from "@/components/home/FeaturedProjectRow.astro";
 import Footer from "@/components/layout/Footer.astro";
 import HeroSection from "@/components/layout/HeroSection.astro";
 import PageLayout from "@/components/layout/PageLayout.astro";
 import SectionHeader from "@/components/layout/SectionHeader.astro";
-import NewsletterSection from "@/components/newsletter/NewsletterSection.astro";
-import ListRow from "@/components/ui/ListRow.astro";
 import SectionLink from "@/components/ui/SectionLink.astro";
-import { isPostListable } from "@/config/blog";
 import { ogUrl, siteConfig } from "@/config/site";
 import { achievements } from "@/data/achievements";
 import { featuredProjects } from "@/data/projects";
 import Layout from "@/layouts/Layout.astro";
-import { withRepoStars } from "@/lib/github-stars";
 
 const ogImage = ogUrl({
-	title: "Railly Hugo",
+	title: "Juan Manuel Cerón",
 	description:
-		"Peruvian Software Engineer at Vercel Labs and Founder of Crafter Station, building AI developer tools from Buenos Aires.",
+		"Senior Software Engineer specialized in distributed systems, cloud-native architectures, and high-scale backend platforms.",
 });
-
-const allPosts = await getCollection("blog", ({ data }) =>
-	import.meta.env.PROD ? data.status !== "draft" : true,
-);
-const activePosts = allPosts
-	.filter(({ data }) => isPostListable(data))
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-const recentPosts = activePosts.slice(0, 5);
-const postsByYear = recentPosts.reduce(
-	(acc, post) => {
-		const year = post.data.pubDate.getFullYear();
-		if (!acc[year]) {
-			acc[year] = [];
-		}
-		acc[year].push(post);
-		return acc;
-	},
-	{} as Record<number, typeof recentPosts>,
-);
-const years = Object.keys(postsByYear)
-	.map(Number)
-	.sort((a, b) => b - a);
-const newestPost = activePosts[0];
-const isNewest = (slug: string) => slug === newestPost?.slug;
-const formatDate = (date: Date) =>
-	`${date.getDate().toString().padStart(2, "0")}/${(date.getMonth() + 1).toString().padStart(2, "0")}`;
 
 const achievementsByYear = achievements.reduce(
 	(acc, item) => {
@@ -64,78 +31,36 @@ const achievementYears = Object.keys(achievementsByYear).sort(
 	(a, b) => Number(b) - Number(a),
 );
 
-const rankedProjects = (await withRepoStars(featuredProjects)).sort(
-	(a, b) => b.stars - a.stars,
-);
-const maxStars = Math.max(...rankedProjects.map((p) => p.stars), 1);
+// We won't fetch stars for Juan's portfolio right now to keep it simple, but we can map the projects directly
+const maxStars = Math.max(...featuredProjects.map((p) => p.stars ?? 0));
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const rankedProjects = featuredProjects.map(p => ({ ...p, stars: 0 }));
 ---
 
 <Layout
-	title="Railly Hugo - Software Engineer at Vercel Labs | Crafter Station Founder"
+	title={`${siteConfig.name} - ${siteConfig.hero.role}`}
 	description={siteConfig.description}
 	image={ogImage}
 >
-	<PageLayout class="flex flex-col gap-16">
+	<PageLayout>
 		<HeroSection name={siteConfig.name} title={siteConfig.hero.title} />
 
 		<section class="w-full" aria-labelledby="what-i-build">
-			<SectionHeader title="What I build" className="mb-3" />
-			<p id="what-i-build" class="max-w-2xl text-sm leading-relaxed text-foreground-2">
-				I build open-source developer tools, agent infrastructure, design systems,
-				and civic technology. This portfolio is the canonical index for my projects,
-				technical writing, public research, and <a href="/developers" class="underline">developer resources</a>.
+			<SectionHeader id="what-i-build">What I do</SectionHeader>
+			<p class="max-w-2xl text-sm leading-relaxed text-foreground-2">
+				I focus on solving distributed systems problems for high throughput architectures: designing fault-tolerant systems, improving observability, and optimizing cloud infrastructure for performance and reliability.
 			</p>
 		</section>
 
 		<section class="w-full">
-			<SectionLink title="Projects" href="/projects" />
+			<SectionLink title="Featured Experience" href={`${base}/projects`} />
 			<div class="space-y-0">
 				{rankedProjects.map((project) => <FeaturedProjectRow project={project} maxStars={maxStars} />)}
 			</div>
 		</section>
 
 		<section class="w-full">
-			<SectionLink title="Writing" href="/writing" />
-			<div class="space-y-0">
-				{years.map((year) => (
-					<div class="mt-6 first:mt-2">
-						<div class="mb-1 flex items-center gap-3">
-							<span class="font-mono text-xs tabular-nums tracking-wider text-foreground-3">{year}</span>
-							<span class="h-px flex-1 bg-ui"></span>
-						</div>
-						{postsByYear[year].map((post) => {
-							const isPremiere = post.data.status === "premiere" && new Date() < post.data.pubDate;
-							return isPremiere ? (
-								<ListRow hover={false} divided={false}>
-									<span class="text-sm font-medium text-foreground-3">
-										{post.data.title}
-										<span class="ml-2 rounded border border-ui px-1.5 py-0.5 text-xs font-normal text-foreground-3">Premiere</span>
-									</span>
-									<PremiereCountdown slot="trailing" pubDate={post.data.pubDate.toISOString()} client:load />
-								</ListRow>
-							) : (
-								<ListRow href={`/blog/${post.slug}`} divided={false}>
-									<span class="text-sm font-medium text-foreground group-hover:text-foreground">
-										{post.data.title}
-										{isNewest(post.slug) ? (
-											<span class="ml-2 rounded bg-ui px-1.5 py-0.5 text-xs font-normal text-foreground-2">Newest</span>
-										) : null}
-									</span>
-									<ViewCounter slot="trailing" slug={post.slug} client:load className="text-xs tabular-nums text-foreground-3" />
-									<span slot="trailing" class="text-sm tabular-nums text-foreground-3">{formatDate(post.data.pubDate)}</span>
-								</ListRow>
-							);
-						})}
-					</div>
-				))}
-				{recentPosts.length === 0 && <div class="py-12 text-center"><p class="text-foreground-2">More stories coming soon</p></div>}
-			</div>
-		</section>
-
-		<section class="w-full">
-			<div class="mb-4">
-				<SectionHeader title="Achievements" className="mb-0" />
-			</div>
+			<SectionLink title="Certifications & Awards" href={`${base}/achievements`} />
 			<div class="space-y-0">
 				{achievementYears.map((year) => (
 					<div class="mt-6 first:mt-2">
@@ -149,7 +74,6 @@ const maxStars = Math.max(...rankedProjects.map((p) => p.stars), 1);
 			</div>
 		</section>
 
-		<NewsletterSection />
 		<Footer />
 	</PageLayout>
 </Layout>

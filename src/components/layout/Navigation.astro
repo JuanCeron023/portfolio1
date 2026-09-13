@@ -4,24 +4,22 @@ interface NavItem {
 	label: string;
 }
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 const navItems: NavItem[] = [
-	{ href: "/", label: "home" },
-	{ href: "/about", label: "about" },
-	{ href: "/projects", label: "projects" },
-	{ href: "/developers", label: "developers" },
-	{ href: "/agents", label: "agents" },
-	{ href: "/writing", label: "writing" },
-	{ href: "/press", label: "press" },
-	{ href: "/mentoring", label: "mentoring" },
-	{ href: "/bookshelf", label: "bookshelf" },
-	{ href: "/uses", label: "uses" },
+	{ href: `${base}/`, label: "home" },
+	{ href: `${base}/about`, label: "about" },
+	{ href: `${base}/projects`, label: "projects" },
+	{ href: `${base}/achievements`, label: "achievements" },
+	{ href: `${base}/bookshelf`, label: "bookshelf" },
+	{ href: `${base}/contact`, label: "contact" },
 ];
 
 const { pathname } = Astro.url;
 
 function isActive(href: string): boolean {
-	if (href === "/") {
-		return pathname === "/";
+	if (href === `${base}/` || href === `${base}`) {
+		return pathname === `${base}/` || pathname === `${base}`;
 	}
 	return pathname.startsWith(href);
 }

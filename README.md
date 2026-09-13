@@ -1,29 +1,43 @@
-## <img src="https://railly.dev/favicon/favicon-32x32.png" width="24" height="24" align="center" alt="" /> Railly Hugo ~ Hunter
+# Juan Manuel Cerón — Senior Software Engineer
 
-Software Engineer at [Vercel Labs](https://vercel.com). Building developer tools from Lima, Peru.
+> Senior Software Engineer specializing in distributed systems, event-driven architectures, and cloud-native backend platforms.
 
-Founder of [Crafter Station](https://crafterstation.com), building Peru's tech ecosystem through hackathons, open source, and community.
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/juanmanuelceronaraujo)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/JuanCeron023)
+[![Credly](https://img.shields.io/badge/Credly-FF6B00?style=flat&logo=credly&logoColor=white)](https://www.credly.com/users/juan-manuel-ceron-araujo.4f4e3e87)
 
-### What I build
+---
 
-<!-- START:PROJECTS -->
-- [Petdex](https://petdex.dev) · Animated pets for your coding agent
-- [Agentfiles](https://agentfiles.crafter.run) · Edit AI agent files across 13+ tools
-- [Tinte](https://tinte.dev) · Agent-native design system infrastructure
-<!-- END:PROJECTS -->
+## 🛠️ Core Tech Stack
 
-See [all projects →](https://railly.dev/projects)
+- **Languages**: Go (Golang), Java (Spring Boot), TypeScript, SQL, Dart.
+- **Cloud & Infrastructure**: AWS (Kinesis, SQS, SNS, EventBridge, Lambda, ECS, S3, IAM), Docker, CloudFormation, Terraform.
+- **Databases & Caching**: MongoDB, PostgreSQL, MySQL, Redis.
+- **Observability & Reliability**: Datadog, Grafana, CloudWatch, OpenTelemetry.
+- **Architectures**: Distributed Systems, Event-Driven Architecture, Microservices, Domain-Driven Design (DDD).
 
-### Latest writing
+---
 
-<!-- START:WRITING -->
-- [My Agentic Second Brain, Four Months Later](https://www.railly.dev/blog/agentic-second-brain-four-months-later/) — 2026-07-23
-- [webctl: reverse-engineer any website into an agent CLI](https://www.railly.dev/blog/webctl/) — 2026-04-28
-- [Obsidian as a Personal OS for AI Coding Agents](https://www.railly.dev/blog/agentic-second-brain/) — 2026-03-31
-<!-- END:WRITING -->
+## 🚀 Featured Projects & Experience
 
-### Links
+- **[Optima](https://contratosoptima.com/)** — End-to-end B2B SaaS platform that automates public procurement (SECOP II) monitoring and alerts in Colombia. Designed, scaled, and maintained independently.
+- **High-Throughput Microservices (Disney via Globant)** — Go microservices and event pipelines handling 30K+ daily state updates with Kinesis and MongoDB, optimizing throughput by 2×.
+- **Event-Driven Backend (Mercado Libre)** — High-scale event-driven Go backends processing tens of thousands of daily events with Pub/Sub.
 
-[railly.dev](https://railly.dev) · [twitter](https://twitter.com/RaillyHugo) · [linkedin](https://linkedin.com/in/raillyhugo)
+---
 
-<sub>This README auto-updates daily from <a href="https://railly.dev">railly.dev</a>.</sub>
+## 💻 Running Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/JuanCeron023/portfolio1.git
+cd portfolio1
+
+# Install dependencies
+npm install --legacy-peer-deps
+
+# Start development server
+npm run dev
+```
+
+Built with [Astro 5](https://astro.build), [Tailwind CSS 4](https://tailwindcss.com), and [React](https://react.dev).

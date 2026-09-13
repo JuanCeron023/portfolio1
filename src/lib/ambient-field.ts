@@ -67,7 +67,7 @@ export function mountAmbientField(root: HTMLElement) {
 			});
 			const output = surface(context, canvas, { dpr: 1, autoResize: false });
 			const material = effect(context, shader, {
-				label: "Railly graphite relief",
+				label: "Ambient graphite relief",
 			});
 			await material.compile({ colors: [output.format], sampleCount: 1 });
 			if (disposed || failure) return;

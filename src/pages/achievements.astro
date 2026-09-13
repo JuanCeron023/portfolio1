@@ -1,0 +1,115 @@
+---
+import Footer from "@/components/layout/Footer.astro";
+import PageLayout from "@/components/layout/PageLayout.astro";
+import SectionHeader from "@/components/layout/SectionHeader.astro";
+import Flag from "@/components/brand/Flag.astro";
+import Layout from "@/layouts/Layout.astro";
+import { achievements, credlyProfileUrl } from "@/data/achievements";
+
+const ogTitle = "Achievements & Certifications";
+const ogDescription =
+	"Industry certifications and honors earned by Juan Manuel Cerón, including AWS Certified Solutions Architect, Google AI Professional, Anthropic Claude Partner, and MongoDB SI Architect.";
+---
+
+<Layout
+	title="Achievements & Certifications – Juan Manuel Cerón"
+	description={ogDescription}
+>
+	<PageLayout class="flex flex-col gap-10">
+		<header class="space-y-4">
+			<SectionHeader title="Achievements & Certifications" />
+			<p class="max-w-2xl text-base leading-relaxed text-foreground-2">
+				A collection of certifications and milestones I've earned along the way—mostly focused on cloud architecture, distributed systems, and technologies I actually use in production.
+			</p>
+			<div>
+				<a
+					href={credlyProfileUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-ui/60 bg-background-2 text-xs font-mono text-foreground hover:border-ui hover:bg-foreground hover:text-background transition-all"
+				>
+					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="size-3.5">
+						<circle cx="12" cy="8" r="6"></circle>
+						<path d="M9 21l3-3 3 3"></path>
+						<path d="M9 12v9"></path>
+						<path d="M15 12v9"></path>
+					</svg>
+					<span>Verify badges on Credly</span>
+					<span aria-hidden="true">&rarr;</span>
+				</a>
+			</div>
+		</header>
+
+		<section class="space-y-6">
+			{achievements.map((item) => (
+				<article class="p-5 rounded-lg border border-ui/40 bg-background-2/40 hover:border-ui/80 hover:bg-background-2 transition-all duration-200 flex flex-col gap-3">
+					<div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+						<div class="flex items-center gap-2 flex-wrap">
+							<h2 class="text-base font-medium text-foreground tracking-tight">
+								{item.achievement}
+							</h2>
+							<span class="shrink-0">
+								{item.scope === "global" && (
+									<Flag country="globe" width={14} height={14} class="text-foreground-3" />
+								)}
+								{item.scope === "co" && (
+									<Flag country="co" width={14} height={14} />
+								)}
+							</span>
+						</div>
+						<div class="flex items-center gap-2 font-mono text-xs text-foreground-3 shrink-0">
+							<span>{item.year}</span>
+						</div>
+					</div>
+
+					<div class="flex items-center gap-2 text-xs font-mono text-foreground-3">
+						<span class="text-foreground-2 font-medium">{item.event}</span>
+						<span>&middot;</span>
+						<span class="text-green-500/90 flex items-center gap-1">
+							<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+								<polyline points="20 6 9 17 4 12"></polyline>
+							</svg>
+							Verified
+						</span>
+					</div>
+
+					{item.description && (
+						<p class="text-sm leading-relaxed text-foreground-2">
+							{item.description}
+						</p>
+					)}
+
+					{item.skills && item.skills.length > 0 && (
+						<div class="flex flex-wrap gap-1.5 pt-1">
+							{item.skills.map((skill) => (
+								<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-ui/30 text-foreground-3 border border-ui/20">
+									{skill}
+								</span>
+							))}
+						</div>
+					)}
+
+					{item.credentialUrl && (
+						<div class="pt-1">
+							<a
+								href={item.credentialUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center gap-1 text-xs font-mono text-foreground-3 hover:text-foreground underline decoration-ui hover:decoration-foreground transition-colors"
+							>
+								<span>View credential on Credly</span>
+								<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+									<polyline points="15 3 21 3 21 9"></polyline>
+									<line x1="10" y1="14" x2="21" y2="3"></line>
+								</svg>
+							</a>
+						</div>
+					)}
+				</article>
+			))}
+		</section>
+
+		<Footer />
+	</PageLayout>
+</Layout>

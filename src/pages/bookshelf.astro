@@ -7,7 +7,7 @@ import Layout from "@/layouts/Layout.astro";
 const ogTitle = "Bookshelf";
 const ogDescription =
 	"Books I'm reading, have read, and plan to read. A curated collection on engineering, open source, and thinking.";
-const ogImage = `/api/og?title=${encodeURIComponent(ogTitle)}&description=${encodeURIComponent(ogDescription)}&tag=bookshelf`;
+const ogImage = "/images/avatar.png";
 
 interface Book {
 	title: string;
@@ -22,24 +22,60 @@ interface Book {
 
 const books: Book[] = [
 	{
+		title: "Designing Data-Intensive Applications",
+		author: "Martin Kleppmann",
+		status: "completed",
+		url: "https://dataintensive.net/",
+		pages: 616,
+		note: "The definitive guide to distributed systems, storage engines, replication, and consistency models.",
+		year: "2024",
+		color: "#0284c7",
+	},
+	{
+		title: "The Go Programming Language",
+		author: "Alan A. A. Donovan, Brian W. Kernighan",
+		status: "completed",
+		pages: 400,
+		note: "Mastering idiomatic Go, concurrency primitives, and goroutine leak prevention.",
+		year: "2023",
+		color: "#00add8",
+	},
+	{
+		title: "Building Microservices",
+		author: "Sam Newman",
+		status: "completed",
+		pages: 612,
+		note: "Fine-grained architectures, service boundaries, and event-driven patterns in practice.",
+		year: "2023",
+		color: "#ea580c",
+	},
+	{
+		title: "System Design Interview",
+		author: "Alex Xu",
+		status: "completed",
+		pages: 320,
+		note: "Practical blueprints for large-scale systems, caching tiers, and rate limiters.",
+		year: "2023",
+		color: "#16a34a",
+	},
+	{
+		title: "Database Internals",
+		author: "Alex Petrov",
+		status: "reading",
+		pages: 374,
+		note: "Deep dive into B-Trees, LSM-Trees, consensus algorithms, and distributed storage engines.",
+		year: "2026",
+		color: "#9333ea",
+	},
+	{
 		title: "The Art of Doing Science and Engineering",
 		author: "Richard W. Hamming",
 		status: "reading",
 		url: "https://press.stripe.com/the-art-of-doing-science-and-engineering",
 		pages: 432,
-		note: "Learning to learn. Hamming's lectures on thinking clearly about your career and craft.",
+		note: "Hamming's lectures on learning to learn, thinking clearly about engineering craft and career trajectory.",
 		year: "2026",
 		color: "#1a3a5c",
-	},
-	{
-		title: "Working in Public",
-		author: "Nadia Eghbal",
-		status: "reading",
-		url: "https://press.stripe.com/working-in-public",
-		pages: 256,
-		note: "The making and maintenance of open source software. Resonates deeply with Elements and Tinte.",
-		year: "2026",
-		color: "#2d5a3d",
 	},
 ];
 
@@ -60,7 +96,7 @@ const spineWidth = (pages?: number) => {
 };
 ---
 
-<Layout title={`${ogTitle} — Railly Hugo`} description={ogDescription} image={ogImage}>
+<Layout title={`${ogTitle} – Juan Manuel Cerón`} description={ogDescription} image={ogImage}>
 	<PageLayout class="flex flex-col gap-8">
 		<SectionHeader title="Bookshelf" />
 

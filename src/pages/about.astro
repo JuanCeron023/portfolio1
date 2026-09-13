@@ -8,8 +8,8 @@ import Layout from "@/layouts/Layout.astro";
 
 const ogTitle = "About";
 const ogDescription =
-	"Peruvian Software Engineer at Vercel Labs and founder of Crafter Station, building AI developer tools, open source software, and LATAM's tech ecosystem from Buenos Aires.";
-const ogImage = `/api/og?title=${encodeURIComponent(ogTitle)}&description=${encodeURIComponent(ogDescription)}&tag=about`;
+	"Senior Software Engineer from Pasto, Colombia. Specializing in distributed systems, Go, AWS, and cloud-native architectures. Backend engineer at Disney via Globant, ex Mercado Libre, and founder of Optima.";
+const ogImage = "/images/avatar.png";
 
 const linkClass =
 	"text-foreground underline decoration-ui hover:bg-foreground hover:text-background transition-colors";
@@ -26,60 +26,59 @@ interface Milestone {
 const milestones: Milestone[] = [
 	{
 		year: "2026",
-		title: "Joined Vercel Labs",
+		title: "Founded Optima – B2B SaaS",
 		detail:
-			"Software engineer building at the intersection of AI and developer tools.",
-		icon: "vercel",
-		url: "https://vercel.com",
+			"Designed and built end-to-end a SaaS platform that automates SECOP II public procurement monitoring in Colombia, delivering bi-hourly email alerts to paying business clients.",
+		icon: "terminal",
+		url: "https://contratosoptima.com",
 	},
 	{
 		year: "2026",
-		title: "Started a path into AI research",
-		detail:
-			"Civic-tech tools and LATAM-focused research at Crafter Research, alongside Shara Arauzo.",
-		url: "https://github.com/crafter-research",
+		title: "AWS Solutions Architect – Associate",
+		detail: "Certified by Amazon Web Services. Also holds Google AI Professional, MongoDB SI Architect, and Azure Fundamentals certifications.",
+		icon: "code",
+		url: "https://www.credly.com/users/juan-manuel-ceron-araujo.4f4e3e87",
 	},
 	{
-		year: "2025",
-		title: "Won three international hackathons",
+		year: "2024 – now",
+		title: "Senior Backend Engineer at Globant (Disney)",
 		detail:
-			"The first-ever Next.js Global Hackathon, the Vercel AI Gateway Hackathon, and Platanus Hack 25 in Chile.",
-		icon: "nextjs",
-		url: "https://luma.com/vsi4m4l8",
-	},
-	{
-		year: "2025",
-		title: "Master's in Artificial Intelligence",
-		detail: "Completed at UNIR Mexico.",
-		url: "https://mexico.unir.net",
-	},
-	{
-		year: "2024-26",
-		title: "Built platforms with Midudev",
-		detail:
-			"Video pipelines, high-traffic event sites, and AI integrations for the leading Hispanic tech streamer.",
-		icon: "midudev",
-		url: "https://midu.dev",
+			"Redesigning Go microservices processing 30K+ daily state updates. Building event-driven pipelines with Kinesis, SQS, EventBridge, and MongoDB. Driving a 2× throughput improvement while reducing infrastructure cost.",
+		icon: "code",
+		url: "https://www.globant.com",
 	},
 	{
 		year: "2023",
-		title: "Founded Crafter Station",
+		title: "Sr. Backend Engineer at Mercado Libre",
 		detail:
-			"A non-profit open-source organization connecting 1,000+ builders across LATAM through projects, hackathons, and shipping programs.",
-		icon: "crafterStation",
-		url: "https://github.com/crafter-station",
+			"Built and operated high-throughput event-driven Go backends processing tens of thousands of events daily using Pub/Sub, ensuring fault tolerance and horizontal scalability.",
+		icon: "code",
+		url: "https://www.mercadolibre.com",
 	},
 	{
 		year: "2023",
-		title: "Graduated in Software Engineering",
-		detail: "From UNMSM, Peru's oldest university — where I now teach.",
-		icon: "unmsm",
-		url: "https://unmsm.edu.pe",
+		title: "Backend Engineer at Pragma",
+		detail:
+			"Developed scalable APIs and microservices. Contributed to cloud cost optimization and led knowledge-transfer sessions with junior engineers.",
+		icon: "code",
+	},
+	{
+		year: "2021 – 2022",
+		title: "Backend Developer at Soporte Lógico",
+		detail:
+			"Built RESTful services in Go and integrated third-party APIs. Introduced observability tooling (Datadog) and contributed to DevOps workflows.",
+		icon: "code",
+	},
+	{
+		year: "2017 – 2022",
+		title: "Systems Engineering – Mariana University",
+		detail:
+			"Full-tuition scholarship (highest GPA in cohort). Published two apps on Google Play during undergraduate studies.",
+		url: "https://www.umariana.edu.co",
 	},
 ];
 
-// Group consecutive milestones under one year header so the year
-// isn't repeated row to row.
+// Group consecutive milestones under one year header
 const milestonesByYear = milestones.reduce(
 	(acc, m) => {
 		const last = acc[acc.length - 1];
@@ -95,7 +94,7 @@ const milestonesByYear = milestones.reduce(
 ---
 
 <Layout
-	title="About Railly Hugo - Software Engineer at Vercel Labs"
+	title="About Juan Manuel Cerón – Senior Software Engineer"
 	description={ogDescription}
 	image={ogImage}
 >
@@ -104,9 +103,10 @@ const milestonesByYear = milestones.reduce(
 
 		<!-- Intro -->
 		<p class="max-w-2xl text-base leading-relaxed text-foreground-2">
-			I'm a Peruvian software engineer, founder, and builder from Lima, now
-			based in Buenos Aires. I ship fast, iterate in public, and believe
-			everything compounds.
+			I'm a Senior Software Engineer from Pasto, Colombia. I specialize in
+			distributed systems, event-driven architectures, and cloud-native backend
+			development. I build things that scale, stay reliable under pressure, and
+			ship on time.
 		</p>
 
 		<!-- Now -->
@@ -122,19 +122,19 @@ const milestonesByYear = milestones.reduce(
 				<li class="flex items-baseline gap-3 text-base text-foreground-2">
 					<span class="select-none text-foreground-3" aria-hidden>&rarr;</span>
 					<span>
-						Software engineer at <BrandIcon name="vercel" width={16} height={16} class="inline-block mb-0.5 mr-0.5 align-text-bottom" /><a href="https://vercel.com" target="_blank" class={linkClass}>Vercel Labs</a>
+						Senior Backend Engineer at <a href="https://www.globant.com" target="_blank" class={linkClass}>Globant</a> for <a href="https://www.disney.com" target="_blank" class={linkClass}>Disney</a> — building Go microservices and event-driven pipelines at scale
 					</span>
 				</li>
 				<li class="flex items-baseline gap-3 text-base text-foreground-2">
 					<span class="select-none text-foreground-3" aria-hidden>&rarr;</span>
 					<span>
-						Starting a path into <i>AI research</i> at <a href="https://github.com/crafter-research" target="_blank" class={linkClass}>Crafter Research</a>, building civic-tech tools for LATAM
+						Founder of <a href="https://contratosoptima.com" target="_blank" class={linkClass}>Optima</a> — a B2B SaaS platform I designed, built, and maintain end-to-end
 					</span>
 				</li>
 				<li class="flex items-baseline gap-3 text-base text-foreground-2">
 					<span class="select-none text-foreground-3" aria-hidden>&rarr;</span>
 					<span>
-						Founder of <BrandIcon name="crafterStation" width={16} height={16} class="inline-block mb-0.5 mr-0.5 align-text-bottom" /><a href="https://github.com/crafter-station" target="_blank" class={linkClass}>Crafter Station</a> and teaching at <BrandIcon name="unmsm" width={16} height={16} class="inline-block !my-0 !ml-0 mr-0.5 align-text-bottom rounded-sm" /><a href="https://unmsm.edu.pe" target="_blank" class={linkClass}>UNMSM</a>
+						AWS Certified Solutions Architect · Google AI Professional · MongoDB SI Architect
 					</span>
 				</li>
 			</ul>
@@ -147,7 +147,7 @@ const milestonesByYear = milestones.reduce(
 				{milestonesByYear.map((group, gi) => (
 					<div class="relative flex gap-5">
 						<!-- Year label, once per group -->
-						<div class="w-14 shrink-0 pt-0.5 text-right">
+						<div class="w-28 shrink-0 pt-0.5 text-right">
 							<span class="whitespace-nowrap font-mono text-xs tabular-nums tracking-wider text-foreground-3">{group.year}</span>
 						</div>
 						<!-- Rail -->
@@ -184,11 +184,13 @@ const milestonesByYear = milestones.reduce(
 			</div>
 		</section>
 
-		<!-- Open source -->
+		<!-- Stack -->
 		<section class="w-full">
-			<SectionHeader title="Open Source" className="mb-3" />
+			<SectionHeader title="Tech Stack" className="mb-3" />
 			<p class="max-w-2xl text-sm leading-relaxed text-foreground-2">
-				I build tools in the open: <BrandIcon name="tinte" width={14} height={14} class="inline-block mb-0.5 mr-0.5 align-text-bottom rounded-full" /><a href="https://tinte.dev" target="_blank" class={linkClass}>Tinte</a> (agent-native design infrastructure, part of the Vercel OSS Program), <BrandIcon name="elements" width={12} height={14} class="inline-block mb-0.5 mr-0.5 align-text-bottom" /><a href="https://tryelements.dev" target="_blank" class={linkClass}>Elements</a> (full-stack shadcn components), and the <BrandIcon name="oneHunter" width={14} height={14} class="inline-block mr-1 align-text-bottom rounded-sm" /><a href="https://marketplace.visualstudio.com/items?itemName=RaillyHugo.one-hunter" target="_blank" class={linkClass}>One Hunter</a> VS Code theme (35k+ downloads), among others. I'm a <BrandIcon name="codex" width={14} height={14} class="inline-block mr-0.5 mb-0.5 align-text-bottom" /><a href="https://openai.com/codex/" target="_blank" class={linkClass}>Codex Ambassador</a>.
+				Primary language: <strong>Go</strong>. Cloud: <strong>AWS</strong> (Kinesis, SQS, EventBridge, Lambda, ECS). 
+				Databases: <strong>MongoDB</strong>, PostgreSQL, Redis. Observability: <strong>Datadog</strong>, Grafana. 
+				Container orchestration: Docker, Kubernetes. Secondary: Java (Spring Boot), Dart/Flutter, TypeScript.
 			</p>
 		</section>
 
@@ -196,7 +198,9 @@ const milestonesByYear = milestones.reduce(
 		<section class="w-full">
 			<SectionHeader title="Reach me" className="mb-3" />
 			<p class="text-sm leading-relaxed text-foreground-2">
-				<BrandIcon name="x" width={14} height={14} class="inline-block mb-0.5 mr-0.5 align-text-bottom" /><a href="https://x.com/raillyhugo" target="_blank" class={linkClass}>@raillyhugo</a> &middot; <a href="mailto:hi@railly.dev" class={linkClass}>hi@railly.dev</a>
+				<a href="https://linkedin.com/in/juanmanuelceronaraujo" target="_blank" class={linkClass}>LinkedIn</a> &middot;
+				<a href="https://github.com/JuanCeron023" target="_blank" class={linkClass}>GitHub</a> &middot;
+				<a href="mailto:juanceron256@gmail.com" class={linkClass}>juanceron256@gmail.com</a>
 			</p>
 		</section>
 

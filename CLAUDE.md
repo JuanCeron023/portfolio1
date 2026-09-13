@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio website for Railly Hugo built with Astro 5, React 19, and Tailwind CSS 4. The site showcases projects, blog posts, achievements, and uses a grayscale CSS custom property palette for theming with Vesper syntax highlighting themes.
+Personal portfolio website for Juan Manuel Cerón built with Astro 5, React 19, and Tailwind CSS 4. The site showcases projects, achievements & certifications, and uses a grayscale CSS custom property palette for theming with ambient particle effects.
 
 ## Common Commands
 
@@ -24,16 +24,15 @@ bun run preview      # Preview production build
 - **Content**: MDX for blog posts with Astro content collections
 - **Deployment**: Vercel (configured via @astrojs/vercel adapter)
 - **Analytics**: Vercel Web Analytics enabled
-- **Database**: Vercel KV for blog post view counts
 
 ### Project Structure
-- `src/pages/` - File-based routing: about, agents, ai-tools-spectrum, bookshelf, flights, gallery, index, meet, mentoring, people, projects, uses, writing; plus `blog/[...slug]`, `blog/index`, `til/index`, `drafts/[id]`
-- `src/content/blog/` - MDX blog posts managed via content collections (schema in `src/content/config.ts`)
+- `src/pages/` - File-based routing: index, about, projects, achievements, bookshelf, contact, 404
 - `src/components/` - Organized into subdirectories:
-  - `brand/` - Logo components (Elements, Tinte, Clerk, etc.)
-  - `content/` - Blog content components (CodeBlock, TableOfContents, etc.)
-  - `ui/` - Reusable UI components (Card variants, etc.)
-  - `layout/` - Layout components (Navigation, Footer, PageLayout, HeroSection)
+  - `brand/` - Brand and technology logo components (GitHub, Terminal, Code, Android, Next.js, Vercel)
+  - `home/` - Homepage components (AchievementRow, FeaturedProjectRow)
+  - `layout/` - Layout components (Navigation, Footer, PageLayout, HeroSection, AmbientField)
+  - `seo/` - SEO and Favicon components
+  - `ui/` - Reusable UI elements (SectionLink, ArrowIcon)
 - `src/layouts/` - Page layouts with meta tags, SEO, and view transitions
 - `src/styles/` - Global styles split into modular CSS files (global.css, fonts.css, code.css, reset.css)
 - `src/config/site.ts` - Centralized site configuration (name, description, social links, theme colors)

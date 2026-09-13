@@ -12,19 +12,18 @@ const { name, title } = Astro.props;
 const linkClass =
 	"text-foreground font-medium underline decoration-ui hover:bg-foreground hover:text-background transition-colors";
 
-// Roles cycled by the rotating subtitle. First entry is the static fallback
-// (also what renders if JS is off or reduced-motion is on).
-const roles = ["Hunter", "Software Engineer", "AI Researcher", "Founder"];
+// Roles cycled by the rotating subtitle.
+const roles = ["Senior SWE", "Go Engineer", "Systems Builder", "SaaS Founder"];
+const avatarSrc = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/images/avatar.png`;
 ---
 
 <header class="hero-reveal flex gap-2 items-center justify-start w-full" style="--reveal-delay: 0ms">
     <span class="relative flex size-7 shrink-0 mr-1">
         <img
-            src="/favicon/favicon-96x96.png"
-            alt="Railly Hugo"
-            class="size-7 rounded-full"
+            src={avatarSrc}
+            alt="Juan Manuel Cerón"
+            class="size-7 rounded-full object-cover"
         />
-
     </span>
     <h1 class="text-xl tracking-tight font-medium text-foreground">
         {name}
@@ -37,47 +36,38 @@ const roles = ["Hunter", "Software Engineer", "AI Researcher", "Founder"];
     >
         {title}
     </span>
-    <Flag country="pe" />
+    <Flag country="co" />
 </header>
 
 <section class="flex flex-col gap-2">
     <p class="hero-reveal text-base text-foreground-2 !m-0" style="--reveal-delay: 90ms">
-        I'm a <i>software engineer</i> at <BrandIcon
-            name="vercel"
-            width={16}
-            height={16}
-            class="inline-block mb-0.5 mr-0.5 align-text-bottom"
-        /><a
-            href="https://vercel.com"
+        I'm a <i>Senior Software Engineer</i> specializing in <strong>distributed systems</strong> and <strong>cloud-native architectures</strong>.
+        Currently building high-throughput backend services at <a
+            href="https://www.globant.com"
             target="_blank"
-            class={linkClass}>Vercel Labs</a
-        > and <i>founder</i> of <BrandIcon
-            name="crafterStation"
-            width={16}
-            height={16}
-            class="inline-block mb-0.5 mr-0.5 align-text-bottom"
-        /><a
-            href="https://github.com/crafter-station"
+            class={linkClass}>Globant</a
+        > for <a
+            href="https://www.disney.com"
             target="_blank"
-            class={linkClass}>Crafter Station</a
+            class={linkClass}>Disney</a
         >.
     </p>
 
     <p class="hero-reveal text-base text-foreground-2 !m-0" style="--reveal-delay: 180ms">
-        Starting my path into <i>AI research</i> at <a
-            href="https://github.com/crafter-research"
+        Previously <i>Senior Backend Engineer</i> at <a
+            href="https://www.mercadolibre.com"
             target="_blank"
-            class={linkClass}>Crafter Research</a
-        >, building civic-tech tools for LATAM. I also teach at <BrandIcon
-            name="unmsm"
-            width={16}
-            height={16}
-            class="inline-block !my-0 !ml-0 mr-0.5 align-text-bottom rounded-sm"
+            class={linkClass}>Mercado Libre</a
+        >, building event-driven Go systems at scale. Founder of <BrandIcon
+            name="terminal"
+            width={14}
+            height={14}
+            class="inline-block mb-0.5 mr-0.5 align-text-bottom"
         /><a
-            href="https://unmsm.edu.pe"
+            href="https://contratosoptima.com"
             target="_blank"
-            class={linkClass}>UNMSM</a
-        >.
+            class={linkClass}>Optima</a
+        > — a B2B SaaS platform I designed and built end-to-end.
     </p>
 
     <p class="hero-reveal text-base text-foreground-2 !m-0" style="--reveal-delay: 270ms">
@@ -87,46 +77,37 @@ const roles = ["Hunter", "Software Engineer", "AI Researcher", "Founder"];
             height={14}
             class="inline-block mb-0.5 mr-0.5 align-text-bottom"
         /><a
-            href="https://github.com/railly"
+            href="https://github.com/JuanCeron023"
             target="_blank"
             class={linkClass}>GitHub</a
-        > and <a
-            href="https://x.com/raillyhugo"
+        > or connect on <a
+            href="https://linkedin.com/in/juanmanuelceronaraujo"
             target="_blank"
-            aria-label="X (Twitter)"
-            class="inline-block underline decoration-ui hover:bg-foreground hover:text-background transition-colors"
-        ><BrandIcon
-            name="x"
-            width={14}
-            height={14}
-            class="align-middle"
-        /></a>, or <a
-            href="/about"
-            class={linkClass}>get to know me</a
+            class={linkClass}>LinkedIn</a
         >.
     </p>
 
     <div class="hero-reveal flex flex-wrap gap-2 mt-3" style="--reveal-delay: 360ms">
         <a
-            href="https://openai.com/codex/"
+            href="https://contratosoptima.com"
             target="_blank"
             class="group inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-ui/50 hover:border-ui transition-all duration-200"
         >
-            <BrandIcon name="codex" width={16} height={16} />
+            <BrandIcon name="terminal" width={14} height={14} />
             <span
                 class="text-xs text-foreground-2 group-hover:text-foreground transition-colors"
-                >Codex Ambassador</span
+                >Optima – B2B SaaS Founder</span
             >
         </a>
         <a
-            href="https://github.com/Railly/tinte"
+            href="https://www.credly.com/users/juan-manuel-ceron-araujo.4f4e3e87"
             target="_blank"
             class="group inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-ui/50 hover:border-ui transition-all duration-200"
         >
-            <BrandIcon name="vercel" width={10} height={10} class="text-foreground" />
+            <BrandIcon name="code" width={14} height={14} class="text-foreground" />
             <span
                 class="text-xs text-foreground-2 group-hover:text-foreground transition-colors"
-                >Vercel OSS Fall 2025</span
+                >AWS & Google AI Certified</span
             >
         </a>
     </div>
