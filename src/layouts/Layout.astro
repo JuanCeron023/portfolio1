@@ -61,12 +61,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 		/>
 		<ClientRouter />
 		<slot name="head" />
-		<!-- Umami Analytics -->
+		<!-- Umami Analytics (Proxied via Cloudflare Worker to bypass ad blockers) -->
 		<script
 			is:inline
 			defer
-			src="https://cloud.umami.is/script.js"
+			src="https://delicate-limit-56ff.juanceron4096.workers.dev/tracker.js"
 			data-website-id="e2953810-28de-417b-b10c-8562bb016d88"
+			data-host-url="https://delicate-limit-56ff.juanceron4096.workers.dev"
 		></script>
 	</head>
 	<body class="min-h-screen bg-background text-foreground selection:text-primary selection:bg-background-2">
