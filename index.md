@@ -10,10 +10,10 @@ Juan Manuel Cerón is a Senior Software Engineer from Pasto, Colombia, specializ
 
 ## Primary resources
 
-- [Projects](https://juanceron023.github.io/projects)
-- [About](https://juanceron023.github.io/about)
-- [Achievements](https://juanceron023.github.io/achievements)
-- [Bookshelf](https://juanceron023.github.io/bookshelf)
-- [Contact](https://juanceron023.github.io/contact)
+- [Projects](https://jmceron.com/projects)
+- [About](https://jmceron.com/about)
+- [Achievements](https://jmceron.com/achievements)
+- [Bookshelf](https://jmceron.com/bookshelf)
+- [Contact](https://jmceron.com/contact)
 - [GitHub](https://github.com/JuanCeron023)
 - [LinkedIn](https://linkedin.com/in/juanmanuelceronaraujo)
