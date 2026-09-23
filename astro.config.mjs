@@ -10,8 +10,8 @@ import vesperLight from "./public/themes/vesper-light.json";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://juanceron023.github.io",
-	base: "/portfolio1",
+	site: "https://jmceron.com",
+	base: "/",
 
 	vite: {
 		plugins: [tailwindcss()],

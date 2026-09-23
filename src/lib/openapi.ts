@@ -8,7 +8,7 @@ export const openApiDocument = {
 		license: { name: "MIT", url: "https://github.com/JuanCeron023" },
 	},
 	security: [],
-	servers: [{ url: "https://juanceron023.github.io" }],
+	servers: [{ url: "https://jmceron.com" }],
 	paths: {
 		"/api/projects.json": {
 			get: {

@@ -11,7 +11,7 @@ export const siteConfig: SiteConfig = {
 	name: "Juan Manuel Cerón",
 	description:
 		"Senior Software Engineer specialized in distributed systems, cloud-native architectures, and high-scale backend platforms. Building resilient Go microservices and event-driven systems for global platforms.",
-	url: "https://juanceron023.github.io/portfolio1",
+	url: "https://jmceron.com",
 	ogImage: "/images/avatar.png",
 	hero: {
 		title: "Juan Cerón",
